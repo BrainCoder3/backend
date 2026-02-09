@@ -1,0 +1,15 @@
+service: hello-world
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+# ^-- 2 espaces ici !
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: GET
+          cors: true
